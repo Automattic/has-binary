@@ -22,12 +22,12 @@ describe('has-binarydata', function(){
   });
 
   it('should work with an object that does not contain binary', function() {
-    var ob = {a: 'a', b: [], c: 1234};
+    var ob = {a: 'a', b: [], c: 1234, toJSON: '{\"a\": \"a\"}'};
     assert(!hasBinary(ob));
   });
 
   it('should work with an object that contains a buffer', function() {
-    var ob = {a: 'a', b: new Buffer('abc'), c: 1234};
+    var ob = {a: 'a', b: new Buffer('abc'), c: 1234, toJSON: '{\"a\": \"a\"}'};
     assert(hasBinary(ob));
   });
 
