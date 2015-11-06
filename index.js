@@ -40,7 +40,7 @@ function hasBinary(data) {
           }
       }
     } else if (obj && 'object' == typeof obj) {
-      if (obj.toJSON) {
+      if (obj.toJSON && 'function' == typeof obj.toJSON) {
         obj = obj.toJSON();
       }
 
